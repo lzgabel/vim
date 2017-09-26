@@ -31,21 +31,19 @@ fi
 
 echo "安装完毕将自动退出"
 echo "请耐心等待..."
-##vim -c "BundleInstall" -c "q" -c "q"
+
 #backup vim to vim_old
-cd ~
-if [ ! -d ".vim" ]; then
+if [  -d ".vim" ]; then
 	mv  -f .vim .vim_old
-elif [ ! -f ".vimrc" ]; then
+elif [  -f ".vimrc" ]; then
 	mv -f .vimrc .vimrc_old
-if 
-cd ~ && git clone https://github.com/Lzgabel/vim.git vim
-mv vim .vim
-cd ~/.vim && tar -zxf vim.tar.gz
-cd ~/.vim/bundle/ && git clone git@github.com:Valloric/YouCompleteMe.git
+fi 
+
+mkdir ~/.vim  && tar -zxf vim.tar.gz -C ~/.vim
+cd ~/.vim/bundle/ && git clone git@github.com:Valloric/YouCompleteMe.git && cd YouCompleteMe && git submodule update --init --recursive
+cd ~/.vim/bundle/YouCompleteMe/ && ./install.py --clang-completer
 cp ~/.vim/vimrc ~/.vimrc
+cp ~/.vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
 cp ~/.vim/tmux.conf ~/.tmux.conf
 cp ~/.vim/tmux.conf.local ~/.tmux.conf.local
-cd ~/.vim/bundle/YouCompleteMe/ && ./install.py --clang-completer
 echo "安装完成"
-exit 0
