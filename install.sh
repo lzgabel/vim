@@ -12,15 +12,15 @@ export PATH
 
 echo "安装将花费一定时间，请耐心等待^_^"
 if which apt-get >/dev/null; then
-	sudo apt-get install -y vim vim-gnome ctags xclip astyle python-setuptools python-dev git tmux zsh 
+	sudo apt-get install -y vim vim-gnome ctags xclip astyle python-setuptools python-dev git tmux zsh make cmake 
 elif which yum >/dev/null; then
-	sudo yum install -y gcc vim git ctags xclip astyle python-setuptools python-devel git tmux zsh	
+	sudo yum install -y gcc vim git ctags xclip astyle python-setuptools python-devel git tmux zsh make cmake	
 fi
 
 ##Add HomeBrew support on  Mac OS
 if which brew >/dev/null; then
     echo "You are using HomeBrew tool"
-    brew install vim ctags git astyle zsh tmux 
+    brew install vim ctags git astyle zsh tmux cmake make 
 fi
 
 #get Oh-My-zsh
@@ -52,5 +52,5 @@ cd ${VIM}/bundle/YouCompleteMe/ && ./install.py --clang-completer
 cp ${VIM}/vimrc ${Home}/.vimrc
 cp ${VIM}/ycm_extra_conf.py ${Home}/.ycm_extra_conf.py
 cp ${VIM}/tmux.conf ${Home}/.tmux.conf
-cp ${VIM}/.vim/tmux.conf.local ${Home}/.tmux.conf.local
+cp ${VIM}/tmux.conf.local ${Home}/.tmux.conf.local
 echo "安装完成"
