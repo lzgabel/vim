@@ -33,17 +33,24 @@ echo "安装完毕将自动退出"
 echo "请耐心等待..."
 
 #backup vim to vim_old
-if [  -d ".vim" ]; then
-	mv  -f .vim .vim_old
-elif [  -f ".vimrc" ]; then
-	mv -f .vimrc .vimrc_old
-fi 
+Home=~
+VIM=${Home}/.vim
+VIM_BACK=${Home}/.vim_old
+if [ -d ${VIM_BACK} ]; then
+    rm -rf ${VIM_BACK}
+fi
+if [ -d ${VIM} ]; then
+    mv -f ${VIM} ${VIM_BACK}
+fi
+if [ -f ${Home}/.vimrc ]; then
+    mv -f ${Home}/.vimrc ${Home}/.vimrc_old
+fi
 
-mkdir ~/.vim  && tar -zxf vim.tar.gz -C ~/.vim
-cd ~/.vim/bundle/ && git clone git@github.com:Valloric/YouCompleteMe.git && cd YouCompleteMe && git submodule update --init --recursive
-cd ~/.vim/bundle/YouCompleteMe/ && ./install.py --clang-completer
-cp ~/.vim/vimrc ~/.vimrc
-cp ~/.vim/ycm_extra_conf.py ~/.ycm_extra_conf.py
-cp ~/.vim/tmux.conf ~/.tmux.conf
-cp ~/.vim/tmux.conf.local ~/.tmux.conf.local
+mkdir ${VIM} && tar -zxf vim.tar.gz -C ${VIM}
+cd ${VIM}/bundle/ && git clone git@github.com:Valloric/YouCompleteMe.git && cd YouCompleteMe && git submodule update --init --recursive
+cd ${VIM}/bundle/YouCompleteMe/ && ./install.py --clang-completer
+cp ${VIM}/vimrc ${Home}/.vimrc
+cp ${VIM}/ycm_extra_conf.py ${Home}/.ycm_extra_conf.py
+cp ${VIM}/tmux.conf ${Home}/.tmux.conf
+cp ${VIM}/.vim/tmux.conf.local ${Home}/.tmux.conf.local
 echo "安装完成"
