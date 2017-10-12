@@ -23,11 +23,6 @@ if which brew >/dev/null; then
     brew install vim ctags git astyle zsh tmux cmake make 
 fi
 
-#get Oh-My-zsh
-sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" 
-if [ ! -f "/usr/bin/ctags" ]; then
-	sudo ln -s /usr/bin/ctags /usr/local/bin/ctags
-fi
 
 echo "安装完毕将自动退出"
 echo "请耐心等待..."
@@ -53,4 +48,10 @@ cp ${VIM}/vimrc ${Home}/.vimrc
 cp ${VIM}/ycm_extra_conf.py ${Home}/.ycm_extra_conf.py
 cp ${VIM}/tmux.conf ${Home}/.tmux.conf
 cp ${VIM}/tmux.conf.local ${Home}/.tmux.conf.local
+
+#get Oh-My-zsh
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" 
+if [ ! -f "/usr/bin/ctags" ]; then
+	sudo ln -s /usr/bin/ctags /usr/local/bin/ctags
+fi
 echo "安装完成"
