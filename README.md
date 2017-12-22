@@ -1,4 +1,4 @@
-# 超强vim配置文件
+# vim配置文件
 
 ### 简易安装方法：
 - git clone https://github.com/Lzgabel/vim.git
@@ -34,6 +34,7 @@
 - `自动补全，可用方向键，<tab> 键选择， 回车确定`
 - `普通模式下：<shift>+o打开错误面板， <shift>+c关闭错误面板， <shift>+n跳转下一个出错位置，<shift>+p跳转上一个出错位置`
 - `当错误发生时，光标停留在错误面板列表栏中， 回车选中你所需要更改的错误信息，<shift>+n, <shift>+p跳转`
+- `错误发生时， <shift>+f Fixit`
 
 ![screenshot.png](vim-error.png)
 
