@@ -39,7 +39,7 @@
 ![screenshot.png](vim-error.png)
 
 # 代码片插入
-* 补全分为【ID】【snip】, 带有【snip】的均可通过<ctrl>+y选择插入代码片
+* `补全分为【ID】【snip】, 带有【snip】的均可通过<ctrl>+y选择插入代码片`
 * 在代码片插入后，光标会停留在占位符位置
   `可以通过<ctrl>+n编辑下一个占位符内容`
   `可以通过<ctrl>+p编辑上一个占位符内容`
