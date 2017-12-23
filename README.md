@@ -1,5 +1,5 @@
 # vim配置文件
-
+**[学长配置不再维护](https://github.com/ma6174/vim-deprecated)，更改为适合自己使用**
 ### 简易安装方法：
 - git clone https://github.com/Lzgabel/vim.git
 - bash install.sh
