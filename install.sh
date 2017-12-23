@@ -12,17 +12,16 @@ export PATH
 
 echo "安装将花费一定时间，请耐心等待^_^"
 if which apt-get >/dev/null; then
-	sudo apt-get install -y vim vim-gnome ctags xclip astyle python-setuptools python-dev git tmux zsh make cmake 
+	sudo apt-get install -y vim vim-gnome ctags xclip astyle python-setuptools python-dev git tmux make cmake 
 elif which yum >/dev/null; then
-	sudo yum install -y gcc vim git ctags xclip astyle python-setuptools python-devel git tmux zsh make cmake	
+	sudo yum install -y gcc vim git ctags xclip astyle python-setuptools python-devel git tmux make cmake	
 fi
 
 ##Add HomeBrew support on  Mac OS
 if which brew >/dev/null; then
     echo "You are using HomeBrew tool"
-    brew install vim ctags git astyle zsh tmux cmake make 
+    brew install vim ctags git astyle tmux cmake make 
 fi
-
 
 echo "安装完毕将自动退出"
 echo "请耐心等待..."
@@ -49,6 +48,11 @@ cp ${VIM}/ycm_extra_conf.py ${Home}/.ycm_extra_conf.py
 cp ${VIM}/tmux.conf ${Home}/.tmux.conf
 cp ${VIM}/tmux.conf.local ${Home}/.tmux.conf.local
 
+if which apt-get >/dev/null; then
+    sudo apt install zsh
+elif which yum >/dev/null; then
+    sudo yum install zsh
+fi
 #get Oh-My-zsh
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)" 
 if [ ! -f "/usr/bin/ctags" ]; then
