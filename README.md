@@ -1,4 +1,5 @@
 # vim配置文件
+## `提前将SSHkeys导入github, 配置git用户信息, 否则YCM及其子模块无法拉取`
 **[学长配置不再维护](https://github.com/ma6174/vim-deprecated)，更改为适合自己使用**
 ### 简易安装方法：
 - git clone https://github.com/Lzgabel/vim.git
@@ -30,7 +31,7 @@
 ![screenshot.png](vim-tmux-buttom.png)
 
 # 错误调试
-## YouComplete+syntastic 自动补全，语法检测
+## YouCompleteMe+syntastic 自动补全，语法检测
 - `自动补全，可用方向键，<tab> 键选择， 回车确定`
 - `普通模式下：<shift>+o打开错误面板， <shift>+c关闭错误面板， <shift>+n跳转下一个出错位置，<shift>+p跳转上一个出错位置`
 - `当错误发生时，光标停留在错误面板列表栏中， 回车选中你所需要更改的错误信息，<shift>+n, <shift>+p跳转`
